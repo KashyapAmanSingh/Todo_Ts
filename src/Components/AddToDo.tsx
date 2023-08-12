@@ -12,17 +12,23 @@ const AddToDo = () => {
 const { handleAddToDo } = useContext(todosContex)!; // Use the useContext hook to access the context
                                        //By using the ! operator, you're telling TypeScript to treat the value as non-null, allowing you to safely destructure the context properties without TypeScript raising an error.
 
+
+                                       
 const handleFormSubmit = (e:React.FormEvent<HTMLFormElement>) => {
 e.preventDefault();
-handleAddToDo(todo);
-setTodo('');
+if (todo !== '') {
+  handleAddToDo(todo);
+  setTodo('');
+}
 }
   return (
     <div>
                 
       <form onSubmit={handleFormSubmit} >
         <input placeholder='write yout Todo...' type="text" name="" value={todo} onChange={(e)=>setTodo(e.target.value)} />
-        <button type='submit' >ADD</button>
+         
+        <button type='submit'>ADD</button>
+  
         </form>   
      
 

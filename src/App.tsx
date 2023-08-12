@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import AddToDo from "./Components/AddToDo";
 import Todos from "./Components/Todos";
 import Navbar from "./Components/Navbar";
