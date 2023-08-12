@@ -29,7 +29,7 @@ export const TodoProvider = ({ children }: TodosProviderProps) => {
         const newTodos = localStorage.getItem('todos') ||"[]";
         return JSON.parse(newTodos) as Todo[];
     } catch (error) {
-        return [];
+        return []
     }
   });
 
