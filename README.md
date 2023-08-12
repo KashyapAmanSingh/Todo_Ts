@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 
@@ -29,3 +30,7 @@ If you are developing a production application, we recommend updating the config
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 # Todo_Ts
 # Ts_Todo
+=======
+# Todo_Ts
+"Ts_Todo: A Modern and Stylish Todo List App 📋✨
+>>>>>>> d55bf7d32f61a19397d571e87e0b4179c7867e37
