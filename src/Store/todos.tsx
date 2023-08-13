@@ -8,21 +8,42 @@ export type Todo = {
   id: string;
   task: string;
   completed: boolean;
-  createAt: Date;
+
 };
 
+
+
+    // console.log("This is filtered datas " + `${hours}:${minutes}:${sec}` );
+        
+    export type Timing = {
+      hours: number,
+      minutes: number,
+      seconds: number
+    }
+
+
+   
 export type TodoContext = {
   todos: Todo[];
+  timing: Timing; // Include the timing object
   handleAddToDo: (task: string) => void; //call signature
   toggleToDoAsCompleted: (id: string) => void;
   handleDeleteTodo: (id: string) => void;
   handleDeleteAll: () => void;
 };
 
+
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const todosContex = createContext<TodoContext | null>(null); //it is a  store that have data
 
+
 export const TodoProvider = ({ children }: TodosProviderProps) => {
+  const timing: Timing = {
+    hours: new Date().getHours(),
+    minutes: new Date().getMinutes(),
+    seconds: new Date().getSeconds()
+  };
   //When you use the TodoProvider component elsewhere in your application and provide the desired components or elements as children, those components or elements will be rendered in place of the {children} expression within the TodoProvider component.
   const [todos, setTodo] = useState<Todo[]>(()=>{
     try {
@@ -33,14 +54,15 @@ export const TodoProvider = ({ children }: TodosProviderProps) => {
     }
   });
 
+ 
   const handleAddToDo = (task: string) => {
     setTodo((prev) => {
       const newTodos: Todo[] = [
         {
           id: Math.random().toString(),
           task: task,
-          completed: false,
-          createAt: new Date(),
+          completed: false
+ 
         },
         ...prev,
       ];
@@ -57,7 +79,7 @@ export const TodoProvider = ({ children }: TodosProviderProps) => {
   //mark completed
   const toggleToDoAsCompleted = (id: string) => {
     setTodo((prev) => {
-      let newTodos = prev.map((todo) => {
+      let newTodos= prev.map((todo) => {
         if (todo.id === id) {
           return { ...todo, completed: !todo.completed };
         }
@@ -68,6 +90,8 @@ export const TodoProvider = ({ children }: TodosProviderProps) => {
     });
   };
 
+
+  
   //delete
   const handleDeleteTodo = (id: string) => {
     setTodo((prev) => {
@@ -88,6 +112,7 @@ export const TodoProvider = ({ children }: TodosProviderProps) => {
     <todosContex.Provider
       value={{
         todos,
+        timing,
         handleAddToDo,
         toggleToDoAsCompleted,
         handleDeleteTodo,

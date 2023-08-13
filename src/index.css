@@ -25,23 +25,37 @@ li{
 }
 
 
-main {
+#main {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
+
 }
 
-main h2{
+ #heading{
     font-size: 3rem;
     font-family: 'Lexend Deca', sans-serif;
     margin-bottom: 4.8rem;
+     color: rgb(152, 18, 18);
+      
+
 }
 
-main h2 .icons{
-    color: #68B984;
+
+#components{
+    border: 7px solid red !important;
+    border-radius: 4rem;
+    padding: 5rem;
+    height: auto;
 }
+
+
+
+
+
+
 
 /*===================*/
 /*navbar styling */
@@ -61,30 +75,33 @@ nav a{
     color: #ccc;
     border-bottom: .3rem solid transparent;
 }
-
 nav a:hover{
-    border-color: #3A3845;
+    border-bottom: 4px solid red ;
+    
+
 }
 
 nav a.active {
     color: #000;
-    border-color: #68B984;
+    border-bottom: 4px solid red ;
+    font-weight: bolder;
+    border-radius: 5rem;
+    transform: scale(1.5);
 }
-
 /*===================*/
 /*Form  styling */
 /*====================*/
 
 form input{
-    border: .1rem solid #ccc;
-    border-radius: .3rem;
+    border: .1rem solid #cccccc;
+    border-radius: 1rem;
     width: 45rem;
     margin: 4rem 0;
-    user-focus: none;
+  
     padding: .6rem 1rem;
     font-size: 1.6rem;
     letter-spacing: .06rem;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 form button{
@@ -94,8 +111,9 @@ form button{
     font-weight: bold;
     cursor: pointer;
     margin-left: 2.4rem;
-     background-color: #68B984;
+     background-color: #9d0707;
      color: #fff;
+     font-weight: bolder;
 }
 
 label{
@@ -106,39 +124,82 @@ label{
 }
 
 /*===================*/
-/*todo task list */
+/*todo work list */
 /*====================*/
 
-.main-task li{
+#work li{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     width:50rem;
     min-height: 6rem;
-    border-bottom: .1rem solid #ccc;
+    border-bottom: .3rem solid #e4040460;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 4rem;
+    font: 30rem;
+
 }
 
-.main-task li:first-child{
-    border-top: .1rem solid #ccc;
+#work li:first-child{
+    border: .2rem solid #a10808;
+}
+#work #btn{
+    border: .2rem solid #a10808;
+    transform: scale(1.5);
+    padding: 0.5rem;
+    margin-left: 25rem;
+    margin-top: 3rem;
+    border-radius: 0.8rem;
+ 
+}
+#work  #btn:hover{
+    background: red;
+    transform: scale(2);
 }
 
-.main-task li:hover{
-    background-color: #fef2f2;
+
+#work li:hover{
+    background-color: #ae1616;
 }
 
-.main-task li input[type="checkbox"]:checked  + label {
+#work li input[type="checkbox"]:checked  + label {
     text-decoration: line-through;
-    color: #D14D72;
+    color:  #a10808;
 }
 
-.main-task li button{
+#work li button{
     padding: .6rem 1rem;
     width: 7rem;
-    background-color: #D14D72;
+    background-color: #9d0707;;
     color: #FFF9F9;
-    border:none;
-    display: inline-block;
     cursor: pointer;
     justify-self: center;
     letter-spacing: .1rem;
+}
+
+
+#clock{
+
+    margin: 3rem;
+ 
+}
+
+
+#watch{
+    transform: scale(2);
+    font-size: 2rem;
+    letter-spacing: .4rem;
+}
+
+#Clock_component{
+    border: 3px solid red ;
+    padding-right: 3rem;
+    display:flex ;
+    justify-content: end;
+    margin-right: 2rem;
+    margin-bottom: 0px;
+    color: #9d0707;
+   
+    font-weight: bolder
 }

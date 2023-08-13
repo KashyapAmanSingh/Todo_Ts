@@ -4,11 +4,20 @@ import { useSearchParams} from "react-router-dom";
 import { todosContex } from "../Store/todos";
 
 const Todos = () => {
-  const { todos, toggleToDoAsCompleted, handleDeleteTodo, handleDeleteAll } = useContext(todosContex)!; // Use the useContext hook to access the context
+  const { todos,timing, toggleToDoAsCompleted, handleDeleteTodo, handleDeleteAll } = useContext(todosContex)!; // Use the useContext hook to access the context
   const [searchParams] = useSearchParams();
   
   let filterData = todos;
     const todosData = searchParams.get('todos');
+
+   // // console.log("This is filtered datas Hours" + filterData.map((value) => new Date(value.createAt)));
+
+
+
+   const{hours,minutes,seconds} =timing;
+
+   console.log("This is filtered datas " + `${hours}:${minutes}:${seconds}` );
+        
 
 
   if (todosData === "active") {
@@ -18,7 +27,7 @@ const Todos = () => {
   }
 
   return (
-    <div>
+    <div id="work">
       {filterData.map((todo) => {
         return (
           <li key={todo.id}>
@@ -31,18 +40,18 @@ const Todos = () => {
             <label htmlFor=""> {todo.task} </label>
 
             {todo.completed && (
-              <button type="button" onClick={() => handleDeleteTodo(todo.id)}>
+              <button type="button"  onClick={() => handleDeleteTodo(todo.id)}>
                 Delete
               </button>
             )}
           </li>
         );
       })}
-      <button type="button" onClick={() => handleDeleteAll()}>
+      <button type="button" id="btn" onClick={() => handleDeleteAll()}>
         Delete All
       </button>
 
-      {}
+     
     </div>
   );
 };
