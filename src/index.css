@@ -193,7 +193,6 @@ label{
 }
 
 #Clock_component{
-    border: 3px solid red ;
     padding-right: 3rem;
     display:flex ;
     justify-content: end;
