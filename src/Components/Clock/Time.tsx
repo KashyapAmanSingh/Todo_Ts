@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {FcAlarmClock} from 'react-icons/fc';
 const TimeClock: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -21,8 +21,7 @@ const TimeClock: React.FC = () => {
 
   return (
     <div id='clock'>
-     
-      <p id='watch'>{ Clock}</p>
+     <FcAlarmClock id="clock_logos"  /> <p id='watch'>{ Clock}</p>
     </div>
   );
 };

@@ -1,204 +1,330 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700;900&family=Urbanist:wght@300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700;900&family=Urbanist:wght@300;600&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /*font-family: 'Lexend Deca', sans-serif;*/
-    font-family: 'Urbanist', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Lexend Deca', sans-serif; */
+  font-family: "Urbanist", sans-serif;
 }
-
 
 /*// thapa technical SUBSCRIBE*/
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
-
-
-a{
-    text-decoration: none;
-}
-
-li{
-    list-style: none;
-}
-
 
 #main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    /* margin-top: 10rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* margin-top: 10rem; */
+}
+
+#heading {
+  font-size: 3rem;
+  font-family: "Lexend Deca", sans-serif;
+  margin-bottom: 4.8rem;
+  color: rgb(152, 18, 18);
+  animation: fallAndSpring 1.5s ease-in-out;
 
 }
 
- #heading{
-    font-size: 3rem;
-    font-family: 'Lexend Deca', sans-serif;
-    margin-bottom: 4.8rem;
-     color: rgb(152, 18, 18);
-      
-
+#components {
+  border: 7px solid red !important;
+  border-radius: 4rem;
+  padding: 5rem;
+  height: auto;
+  animation: fallAndSpring 1.5s ease-in-out;
 }
 
-
-#components{
-    border: 7px solid red !important;
-    border-radius: 4rem;
-    padding: 5rem;
-    height: auto;
+@keyframes fallAndSpring {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  75% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
-
-
-
-
-
 
 
 /*===================*/
 /*navbar styling */
 /*====================*/
 
-nav{
-    width:55rem ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: .1rem solid #ccc;
+nav {
+  width: 55rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid #ccc;
 }
 
-nav a{
-    font-size: 2rem;
-    font-family: 'Lexend Deca', sans-serif;
-    color: #ccc;
-    border-bottom: .3rem solid transparent;
+nav a {
+  font-size: 2rem;
+  font-family: "Lexend Deca", sans-serif;
+  color: #ccc;
+  border-bottom: 0.3rem solid transparent;
 }
-nav a:hover{
-    border-bottom: 4px solid red ;
-    
-
+nav a:hover {
+  border-bottom: 4px solid red;
 }
 
 nav a.active {
-    color: #000;
-    border-bottom: 4px solid red ;
-    font-weight: bolder;
-    border-radius: 5rem;
-    transform: scale(1.5);
+  color: #000;
+  border-bottom: 4px solid red;
+  font-weight: bolder;
+  border-radius: 5rem;
+  transform: scale(1.5);
 }
 /*===================*/
 /*Form  styling */
 /*====================*/
 
-form input{
-    border: .1rem solid #cccccc;
-    border-radius: 1rem;
-    width: 45rem;
-    margin: 4rem 0;
-  
-    padding: .6rem 1rem;
-    font-size: 1.6rem;
-    letter-spacing: .06rem;
-    font-weight: bolder;
+form input {
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  width: 45rem;
+  margin: 4rem 0;
+
+  padding: 0.6rem 1rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.06rem;
+  font-weight: bolder;
 }
 
-form button{
-    padding: .8rem 2.8rem;
-    border: none;
-    border-radius: .3rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 2.4rem;
-     background-color: #9d0707;
-     color: #fff;
-     font-weight: bolder;
-}
+form button {
+  padding: 0.8rem 2.8rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  cursor: pointer;
 
-label{
-    font-size: 1.5rem;
-    letter-spacing: .06rem;
-    color: #3A3845;
-    font-weight: bold;
+  transform: scale(1.2);
+  color: #fff;
+  font-weight: bolder;
+  background-color: transparent;
 }
-
+#logos {
+  transform: scale(1.2);
+  padding: 0;
+  margin: 0;
+}
+#logosAdd {
+  transform: scale(2.5);
+}
 /*===================*/
 /*todo work list */
 /*====================*/
 
-#work li{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    width:50rem;
-    min-height: 6rem;
-    border-bottom: .3rem solid #e4040460;
-    font-style: italic;
-    text-transform: capitalize;
-    font-size: 4rem;
-    font: 30rem;
-
+#work li {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  width: 50rem;
+  min-height: 6rem;
+  border-bottom: 0.3rem solid #e4040460;
+  font-style: italic;
+  text-transform: capitalize;
+  font-size: 4rem;
+  font: 30rem;
 }
 
-#work li:first-child{
-    border: .2rem solid #a10808;
+#work li:first-child {
+  border: 0.2rem solid #a10808;
 }
-#work #btn{
-    border: .2rem solid #a10808;
-    transform: scale(1.5);
-    padding: 0.5rem;
-    margin-left: 25rem;
-    margin-top: 3rem;
-    border-radius: 0.8rem;
- 
+#work #btn {
+  border: 0.2rem solid #a10808;
+  transform: scale(1.5);
+  padding: 0.5rem;
+  margin-left: 25rem;
+  margin-top: 3rem;
+  border-radius: 0.8rem;
 }
-#work  #btn:hover{
-    background: red;
-    transform: scale(2);
+#work li label#lbl {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  font-size: 3rem;
+  
+  font-weight: bold;
 }
-
-
-#work li:hover{
-    background-color: #ae1616;
-}
-
-#work li input[type="checkbox"]:checked  + label {
-    text-decoration: line-through;
-    color:  #a10808;
-}
-
-#work li button{
-    padding: .6rem 1rem;
-    width: 7rem;
-    background-color: #9d0707;;
-    color: #FFF9F9;
-    cursor: pointer;
-    justify-self: center;
-    letter-spacing: .1rem;
+#btn {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically as well */
+  transform: scale(1.4);
+  margin: 0 auto;  /* Center horizontally using margin */
+  margin-top: 2rem;
+background: #9d0707;
+padding: 0.5rem;
+color: white;
+border-radius: 20%;
+font-weight: bolder;
+cursor: pointer;
 }
 
 
-#clock{
 
-    margin: 3rem;
- 
+#work li:hover {
+  background-color: #ae1616;
+}
+
+#work li input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #a10808;
+}
+
+#Create_time {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+/* clock */
+
+#clock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 3rem;
+}
+#clock_logos{
+  transform: scale(5);
+}
+#watch {
+  transform: scale(2);
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+#Clock_component {
+  padding-right: 3rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+  margin-bottom: 0px;
+  color: #9d0707;
+
+  font-weight: bolder;
 }
 
 
-#watch{
-    transform: scale(2);
-    font-size: 2rem;
-    letter-spacing: .4rem;
+/* //star logo  */
+.toggle {
+  background-color: yellow;
+  cursor: pointer;
 }
 
-#Clock_component{
-    padding-right: 3rem;
-    display:flex ;
-    justify-content: end;
-    margin-right: 2rem;
-    margin-bottom: 0px;
-    color: #9d0707;
-   
-    font-weight: bolder
+
+
+/* Media query for screen width 550px */
+@media screen and (max-width: 550px) {
+  #components {
+    padding: 2rem;
+    width: 90%;
+    animation: fallAndSpring 1.5s ease-in-out;
+
+  }
+  nav {
+    width: 100%;
+  }
+  form input {
+    width: 80%; /* Make inputs full width */
+  }
+
+
+  #logos {
+    transform: scale(1); /* Adjust logo size */
+    margin: 0;
+    padding: 0;
+  }
+
+  #logosAdd {
+    transform: scale(2); /* Adjust logo size */
+    margin: 0;
+    padding: 0;
+  }
+
+  #work li {
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 2.5rem; /* Adjust font size */
+    text-align: center;
+  }
+
+  #work #btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  #work li label#lbl {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  #Create_time {
+    font-weight: bolder;
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  #Clock_component {
+    justify-content: center; /* Center the clock component */
+    padding-right: 0; /* Remove right padding */
+    margin-right: 0; /* Remove right margin */
+  }
+  #heading {
+    animation: fallAndSpring 1.5s ease-in-out;
+
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  form input {
+    width: 65%; /* Make inputs full width */
+  }
+
+  #heading {
+    animation: fallAndSpring 1.5s ease-in-out;
+
+    display: none;
+  }
+}
+
+
+#footer {
+  position: relative;
+  width: 100%;
+  height: 50rem;
+
+  margin: 0 auto;
+  color: white; 
+background-color: #5b1515;
+}
+
+#footer iframe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  margin-top: 7rem;
+  transform: translateX(-50%);
+  
+}
+#footer h1 {
+  position: absolute;
+  top: 0;
+  left: 48%;
+letter-spacing: 0.5rem;
+
+transform: scale(2);
+margin-top: 2rem;
+margin-bottom: 3rem;
 }

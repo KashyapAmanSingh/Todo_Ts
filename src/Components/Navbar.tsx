@@ -8,19 +8,19 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/" className={todosData === null ? "active" : ""}>
-        All
+        Add Task
       </Link>
       <Link
         to="/?todos=active"
         className={todosData === "active" ? "active" : ""}
       >
-        Active
+        Active Task
       </Link>
       <Link
         to="/?todos=completed"
         className={todosData === "completed" ? "active" : ""}
       >
-        Completed
+       Executed 
       </Link>
     </nav>
   );

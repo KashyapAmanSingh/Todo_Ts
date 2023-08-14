@@ -1,32 +1,49 @@
 import { useState, useContext } from "react";
+import { todosContex } from "../Context_Store/todos";
+import { Timing } from "../Context_Store/todos";
+import { FcPlus } from 'react-icons/fc';
 
-import { todosContex } from "../Store/todos";
 
 const AddToDo = () => {
   const [todo, setTodo] = useState("");
 
-  const { handleAddToDo } = useContext(todosContex)!; // Use the useContext hook to access the context
-  //By using the ! operator, you're telling TypeScript to treat the value as non-null, allowing you to safely destructure the context properties without TypeScript raising an error.
+  const { handleAddToDo } = useContext(todosContex)!;
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const timing: Timing = {
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
+      seconds: new Date().getSeconds(),
+    };
+
+    // handleTime();
     if (todo !== "") {
-      handleAddToDo(todo);
+      handleAddToDo(todo, timing);
+
       setTodo("");
     }
   };
   return (
-    <div>
+    <div >
+      <div >
       <form onSubmit={handleFormSubmit}>
+
+         
         <input
-          placeholder="write yout Todo..."
+          placeholder="write your Task To Do..."
           type="text"
           name=""
+          className="form-control"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
-        />
-        <button type="submit">ADD</button>
+          
+        />    <button  className="btn btn-outline-primary" type="submit"><FcPlus id="logosAdd" /></button>
+
+  
       </form>
+      </div>
     </div>
   );
 };
