@@ -3,11 +3,20 @@ import { todosContex } from "../Context_Store/todos";
 import { Timing } from "../Context_Store/todos";
 import { FcPlus } from 'react-icons/fc';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const AddToDo = () => {
   const [todo, setTodo] = useState("");
 
   const { handleAddToDo } = useContext(todosContex)!;
+  const notify = () => toast("➕  New task added !"
+  ,{
+    position: toast.POSITION.BOTTOM_CENTER,
+    className: 'toast-message'
+});
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,8 +48,8 @@ const AddToDo = () => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
           
-        />    <button  className="btn btn-outline-primary" type="submit"><FcPlus id="logosAdd" /></button>
-
+        />    <button onClick={notify}  type="submit"><FcPlus id="logosAdd" /></button>
+ <ToastContainer  autoClose={1000}/>
   
       </form>
       </div>

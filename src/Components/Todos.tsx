@@ -3,10 +3,22 @@ import { useSearchParams } from "react-router-dom";
 
 import { todosContex } from "../Context_Store/todos";
 import { Timing } from "../Context_Store/todos";
-import { FcFullTrash } from "react-icons/fc";
+import { FcFullTrash ,FcClock} from "react-icons/fc";
 import { AiOutlineStar } from "react-icons/ai";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Todos = () => {
+  const notify = () =>
+    toast("❌ Deleted All Tasks !", {
+      className: "toast-message",
+    });
+  const stared = () =>
+    toast("⭐ High Priority Task !", {
+      className: "toast-message",
+    });
+
   const { todos, toggleToDoAsCompleted, handleDeleteTodo, handleDeleteAll } =
     useContext(todosContex)!; // Use the useContext hook to access the context
   const [searchParams] = useSearchParams();
@@ -27,10 +39,11 @@ const Todos = () => {
     filterData = filterData.filter((task) => task.completed); // Filter out non-completed tasks
   }
 
-  const handleStarClick = (event: React.MouseEvent<SVGSVGElement, MouseEvent>): void => {
+  const handleStarClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ): void => {
     event.currentTarget.classList.toggle("toggle");
   };
-  
 
   return (
     <>
@@ -57,7 +70,7 @@ const Todos = () => {
                   {time && (
                     <div>
                       <p id="Create_time">
-                        {time.hours} : {time.minutes} : {time.seconds}
+                       <FcClock/> {time.hours} : {time.minutes} : {time.seconds}
                       </p>
                     </div>
                   )}
@@ -65,12 +78,16 @@ const Todos = () => {
               )}
 
               {todo.completed ? (
-                <FcFullTrash
-                  id="logos"
-                  onClick={() => handleDeleteTodo(todo.id)}
-                />
+                <div onClick={notify}>
+                  <FcFullTrash
+                    id="logos"
+                    onClick={() => handleDeleteTodo(todo.id)}
+                  />
+                </div>
               ) : (
-                <AiOutlineStar onClick={handleStarClick} />
+                <div onClick={stared}>
+                  <AiOutlineStar onClick={handleStarClick} />
+                </div>
               )}
             </li>
           );
@@ -78,8 +95,9 @@ const Todos = () => {
       </div>
 
       <button type="button" id="btn" onClick={() => handleDeleteAll()}>
-        Delete All
+        <p onClick={notify}>Delete All</p>
       </button>
+      <ToastContainer position="bottom-center" autoClose={1000} />
     </>
   );
 };
