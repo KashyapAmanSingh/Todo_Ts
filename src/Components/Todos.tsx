@@ -27,9 +27,10 @@ const Todos = () => {
     filterData = filterData.filter((task) => task.completed); // Filter out non-completed tasks
   }
 
-  const handleStarClick = (event): void => {
-    event.target.classList.toggle("toggle");
-  };
+
+const handleStarClick = (event: React.MouseEvent<SVGSVGElement, MouseEvent>): void => {
+  event.currentTarget.classList.toggle("toggle");
+};
 
   return (
     <>
